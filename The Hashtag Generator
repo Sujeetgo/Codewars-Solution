@@ -1,0 +1,8 @@
+def generate_hashtag(s):
+    #your code here
+    r = "#" + s.title().replace(" ", "")
+    if r == "#":
+        return False
+    if len(r) >140:
+        return False
+    return r
