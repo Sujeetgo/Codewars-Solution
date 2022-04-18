@@ -1,0 +1,10 @@
+def page_digits(pages):
+    total = 0
+    initial = 0
+    tens = 10
+    while pages > initial:
+        total += pages - initial
+        initial = tens - 1
+        tens *= 10
+    return total    
+    
