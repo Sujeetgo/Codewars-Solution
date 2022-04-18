@@ -1,0 +1,14 @@
+def digital_root(n):
+    
+    if n == 0:
+        return n
+    result = 0
+    n = str(n)
+    for i in range(0, len(n)):
+        
+      result = (result + int(n[i]) )%9
+    if (result == 0):
+        return 9
+    else:
+        return result % 9
+        
