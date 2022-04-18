@@ -1,0 +1,29 @@
+def prime_factors(n):
+    i = 2
+    result = {}
+    while n/i != 1:
+        if n%i == 0:
+            if i in result:
+                result[i] += 1
+            else:
+                result[i] = 1
+            n = n/i
+        else:
+            i += 1
+    if i in result:
+        result[i] += 1
+    else:
+        result[i] =1
+        
+    k = ''
+    result = sorted(result.items(), key = lambda a:a[0])
+    
+    for key in result:
+        if key[1] == 1:
+            k += '('+ str(key[0]) + ')'
+        else:
+            k +=  '(' +str(key[0]) + '**' + str(key[1]) + ')'
+    return k         
+                
+        
+    
