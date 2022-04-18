@@ -1,0 +1,11 @@
+def duplicate_count(text):
+    new_text = text.lower()
+    
+    
+    arr = []
+    
+    for char in new_text:
+        if (not(char in arr) and new_text.count(char) > 1):
+            arr.append(char)
+            
+    return len(arr)   
