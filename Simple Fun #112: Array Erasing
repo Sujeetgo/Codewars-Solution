@@ -1,0 +1,17 @@
+from itertools import groupby
+
+
+
+def array_erasing(lst, ops =0):
+    if not lst: return ops
+    m = [tuple(g) for _,g in groupby(lst)]
+    if len(m) <= 2: return ops+ len(m)
+    
+    more_optimal = lambda x: (len(x[1]) > 1, -abs(x[0] - (len(m)//2)))
+    
+    to_erase = max(enumerate(m), key= more_optimal)
+    m.pop(to_erase[0])
+    
+    lst = list(sum(m,()))
+    return array_erasing(lst, ops+1)
+                              
